@@ -20,14 +20,17 @@
             globalLayer.setContent(el);
         });
  
-        it('should give the same element that the content of file gives at setContentFromLayout', function () {
+        it('should give the same element that the content of file gives at setContentFromLayout', inject(function ($httpBackend, $compile) {
+            window.mockViewsLoader('<div></div>');
             rootScope.$on(globalLayer.EVENT_NAME_SET_CONTENT, function (event, datas) {
-                // fix after
-                expect(datas.el).toEqual('???');
+                var scopeCompile = rootScope.$new();
+                var elToTest = $compile(angular.element('<div>'))(scopeCompile);
+                expect(datas.el).toEqual(elToTest);
             });
             globalLayer.setContentFromLayout('views/globalLayer/connection.html');
             // to resolve the $templateRequest promise.
             rootScope.$digest();
-        });
+            $httpBackend.flush();
+        }));
     });
 })();
