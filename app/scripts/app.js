@@ -2,11 +2,11 @@
 
 /**
  * @ngdoc overview
- * @name myModuleApp
+ * @name myModule
  * @description
- * # myModuleApp
+ * # myModule
  *
  * Main module of the application.
  */
 angular
-  .module('myModuleApp', []);
+  .module('myModule', []);
