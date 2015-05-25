@@ -3,7 +3,7 @@
  
     describe('Service: globalLayer', function () {
         // load the service's module
-        beforeEach(module('myModule'));
+        beforeEach(module('myModule', window.mockTranslateLoader));
  
         // instantiate service
         var globalLayer, rootScope;
