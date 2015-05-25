@@ -13,3 +13,15 @@ window.mockTranslateLoader = (function () {
         $translateProvider.useLoader('customLoader');
     };
 })();
+
+window.mockViewsLoader = (function () {
+    'use strict';
+
+    return function(respond) {
+        respond = respond ? respond : jasmine.any(String);
+        inject(function ($httpBackend) {
+            var pathView = /^views.*\.html$/;
+            $httpBackend.when('GET', pathView).respond(respond);
+        });
+    };
+})();
