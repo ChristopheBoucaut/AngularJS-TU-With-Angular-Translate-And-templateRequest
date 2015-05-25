@@ -1,11 +1,13 @@
-# my-module
+# This repository ?
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.11.1.
+An sample of code for [this article](http://blog.christophe-boucaut.fr/?p=343).
 
-## Build & development
+# Installation
 
-Run `grunt` for building and `grunt serve` for preview.
+Run
+
+    npm install
+    bower install
 
 ## Testing
 
